@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panadería | Cash Borosa</title>
+  <meta name="description" content="Descubre nuestros productos de panadería fresca en Cash Borosa.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Cash <span>Borosa</span></a>
+      <nav class="site-nav">
+        <a href="index.html">Inicio</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-secondary cart-button" id="openCartBtn" aria-label="Abrir carrito">Carrito (<span id="cartCount">0</span>)</button>
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="contact.html">Contacto</a>
+    <a href="panaderia.html">Panadería</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Panadería artesanal</span>
+          <h1>Pan fresco y recién horneado cada día en Cash Borosa.</h1>
+          <p>Disfruta de nuestra variedad de productos de panadería elaborados con los mejores ingredientes y técnicas tradicionales.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">Ver productos</a>
+            <a href="index.html" class="btn btn-secondary">Volver a inicio</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <h2>Elaborado diariamente</h2>
+            <p>Recibe pan fresco horneado cada mañana.</p>
+          </div>
+          <div class="hero-card hero-card-alt">
+            <h2>Ingredientes naturales</h2>
+            <p>Sin conservantes, solo calidad en cada pieza.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container section-header">
+        <span class="eyebrow">Nuestros productos</span>
+        <h2>Descubre la mejor panadería</h2>
+        <p>Selecciona los productos que más te gusten y añádelos a tu carrito.</p>
+      </div>
+      <div class="carousel-wrapper">
+        <button class="carousel-control carousel-prev" id="carouselPrev" aria-label="Producto anterior">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+            <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+          </svg>
+        </button>
+        <div class="carousel-container">
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+        <button class="carousel-control carousel-next" id="carouselNext" aria-label="Producto siguiente">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16" style="transform: scaleX(-1);">
+            <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+          </svg>
+        </button>
+      </div>
+      <div class="carousel-indicators" id="carouselIndicators"></div>
+    </section>
+
+    <section class="about-cta">
+      <div class="container about-cta-card">
+        <div>
+          <h2>La mejor panadería de Almería</h2>
+          <p>Comprometidos con la calidad y el sabor tradicional en cada producto que elaboramos.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Contáctanos</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYear"></span> Cash Borosa. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="https://www.instagram.com/borosa_market/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/borosa.market" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/company/borosa-market/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.tiktok.com/@borosamarket/" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="toast" id="toastNotif" aria-live="polite"></div>
+
+  <div class="cart-modal" id="cartModal" aria-hidden="true">
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Tu carrito</h2>
+        <button class="close-button" id="closeCartBtn" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div class="cart-body">
+        <div id="cartItems"></div>
+        <div class="cart-summary">
+          <div>
+            <span>Total</span>
+            <strong id="cartTotal">0,00 €</strong>
+          </div>
+          <button class="btn btn-secondary" id="clearCartBtn">Vaciar carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-actions">
+    <button class="side-action" id="openCartSidebarBtn" aria-label="Abrir carrito">🛒</button>
+    <button class="side-action scroll-top-button" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+  </div>
+
+  <script>
+    const panaderyDefaultProducts = [
+      {
+        id: 101,
+        name: "Pan integral",
+        description: "Pan integral con semillas, rico en fibra y nutrientes.",
+        price: 2.50,
+        image: "assets/img/fork.svg"
+      },
+      {
+        id: 102,
+        name: "Baguette francesa",
+        description: "Crujiente baguette francesa tradicional, perfecta para acompañar.",
+        price: 1.80,
+        image: "assets/img/fork.svg"
+      },
+      {
+        id: 103,
+        name: "Pan de centeno",
+        description: "Pan oscuro y sabroso de centeno, ideal para desayunos.",
+        price: 2.20,
+        image: "assets/img/fork.svg"
+      },
+      {
+        id: 104,
+        name: "Croissant de mantequilla",
+        description: "Croissant hojaldre y mantequillado, recién horneado.",
+        price: 1.50,
+        image: "assets/img/fork.svg"
+      },
+      {
+        id: 105,
+        name: "Pan de ajo",
+        description: "Pan artesanal con ajo fresco y hierbas aromáticas.",
+        price: 2.80,
+        image: "assets/img/fork.svg"
+      }
+    ];
+
+    let products = [];
+    let carouselIndex = 0;
+
+    function loadProducts() {
+      products = panaderyDefaultProducts;
+      initCarousel();
+    }
+
+    function initCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const indicators = document.getElementById('carouselIndicators');
+      track.innerHTML = '';
+      indicators.innerHTML = '';
+
+      products.forEach((product, index) => {
+        const slide = createProductCard(product);
+        track.appendChild(slide);
+
+        const indicator = document.createElement('button');
+        indicator.className = `carousel-indicator ${index === 0 ? 'active' : ''}`;
+        indicator.setAttribute('aria-label', `Producto ${index + 1}`);
+        indicator.onclick = () => {
+          carouselIndex = index;
+          updateCarousel();
+        };
+        indicators.appendChild(indicator);
+      });
+
+      document.getElementById('carouselPrev').addEventListener('click', () => {
+        carouselIndex = (carouselIndex - 1 + products.length) % products.length;
+        updateCarousel();
+      });
+
+      document.getElementById('carouselNext').addEventListener('click', () => {
+        carouselIndex = (carouselIndex + 1) % products.length;
+        updateCarousel();
+      });
+    }
+
+    function createProductCard(product) {
+      const slide = document.createElement('div');
+      slide.className = 'carousel-slide';
+      slide.innerHTML = `
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.name}" style="height: 240px; object-fit: contain; background: rgba(109, 57, 142, 0.05);">
+          <div class="product-content">
+            <h3 style="margin: 0;">${product.name}</h3>
+            <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">${product.description}</p>
+            <div class="price-row">
+              <strong style="font-size: 1.3rem; color: var(--accent-dark);">${formatPrice(product.price)}</strong>
+              <button class="add-cart-btn" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" aria-label="Añadir al carrito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      return slide;
+    }
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const offset = carouselIndex * -33.333;
+      track.style.transform = `translateX(${offset}%)`;
+
+      document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === carouselIndex);
+      });
+    }
+
+    function formatPrice(price) {
+      return new Intl.NumberFormat('es-ES', {
+        style: 'currency',
+        currency: 'EUR'
+      }).format(price);
+    }
+
+    function loadCartStorage() {
+      const stored = localStorage.getItem('cashBorosaCart');
+      return stored ? JSON.parse(stored) : [];
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('cashBorosaCart', JSON.stringify(cart));
+      updateCartCount();
+    }
+
+    function updateCartCount() {
+      const cart = loadCartStorage();
+      const count = cart.length;
+      document.getElementById('cartCount').textContent = count;
+    }
+
+    function addToCart(productId, productName, price) {
+      const cart = loadCartStorage();
+      cart.push({
+        id: productId,
+        name: productName,
+        price: price,
+        timestamp: Date.now()
+      });
+      saveCart(cart);
+      showToast(`${productName} añadido al carrito`);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotif');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function openCart() {
+      const modal = document.getElementById('cartModal');
+      const items = document.getElementById('cartItems');
+      const cart = loadCartStorage();
+
+      if (cart.length === 0) {
+        items.innerHTML = '<p class="empty-cart">Tu carrito está vacío</p>';
+      } else {
+        items.innerHTML = cart.map(item => `
+          <div class="cart-item">
+            <strong>${item.name}</strong>
+            <span>${formatPrice(item.price)}</span>
+          </div>
+        `).join('');
+      }
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      document.getElementById('cartTotal').textContent = formatPrice(total);
+      modal.classList.add('open');
+    }
+
+    function closeCart() {
+      document.getElementById('cartModal').classList.remove('open');
+    }
+
+    // Event listeners
+    document.getElementById('openCartBtn').addEventListener('click', openCart);
+    document.getElementById('openCartSidebarBtn').addEventListener('click', openCart);
+    document.getElementById('closeCartBtn').addEventListener('click', closeCart);
+    document.getElementById('cartBackdrop').addEventListener('click', closeCart);
+
+    document.getElementById('clearCartBtn').addEventListener('click', () => {
+      localStorage.removeItem('cashBorosaCart');
+      document.getElementById('cartItems').innerHTML = '<p class="empty-cart">Tu carrito está vacío</p>';
+      document.getElementById('cartTotal').textContent = '0,00 €';
+      updateCartCount();
+    });
+
+    document.getElementById('hamburgerBtn').addEventListener('click', () => {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('hamburgerBtn');
+      menu.classList.toggle('active');
+      btn.classList.toggle('open');
+    });
+
+    document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('active');
+        document.getElementById('hamburgerBtn').classList.remove('open');
+      });
+    });
+
+    document.getElementById('scrollTopBtn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollTopBtn');
+      btn.classList.toggle('visible', window.scrollY > 300);
+    });
+
+    // Cart button delegation
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.add-cart-btn')) {
+        const btn = e.target.closest('.add-cart-btn');
+        const id = parseInt(btn.dataset.id);
+        const name = btn.dataset.name;
+        const price = parseFloat(btn.dataset.price);
+        addToCart(id, name, price);
+      }
+    });
+
+    // Initialize
+    loadProducts();
+    updateCartCount();
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

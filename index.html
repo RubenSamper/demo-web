@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Borosa | Bienvenido</title>
+  <meta name="description" content="Landing page de Cash Borosa con productos dinámicos y carrito interactivo.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Cash <span>Borosa</span></a>
+      <nav class="site-nav">
+        <a href="index.html">Inicio</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-secondary cart-button" id="openCartBtn" aria-label="Abrir carrito">Carrito (<span
+            id="cartCount">0</span>)</button>
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="contact.html">Contacto</a>
+    <a href="contact.html">Prueba 1</a>
+    <a href="contact.html">Prueba 2</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Supermercado online</span>
+          <h1>Compra fácil, recibe rápido y paga seguro en Cash Borosa.</h1>
+          <p>Disfruta de una experiencia moderna con productos destacados, categorías claras y un carrito interactivo
+            pensado para tu conveniencia.</p>
+          <div class="hero-actions">
+            <a href="#categories" class="btn btn-primary">Ver categorías</a>
+            <a href="#products" class="btn btn-secondary">Ver productos</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <h2>Envío exprés</h2>
+            <p>Recibe tus compras en menos de 24h en Almería.</p>
+          </div>
+          <div class="hero-card hero-card-alt">
+            <h2>Precios competitivos</h2>
+            <p>Ofertas especiales en productos frescos y básicos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <div class="container section-header">
+        <span class="eyebrow">Categorías</span>
+        <h2>Encuentra lo que necesitas por sección</h2>
+      </div>
+      <div class="category-grid">
+        <article class="category-card">
+          <h3>Frescos</h3>
+          <p>Frutas, verduras y productos refrigerados.</p>
+        </article>
+        <article class="category-card">
+          <h3>Bebidas</h3>
+          <p>Refrescos, vinos y licores de calidad.</p>
+        </article>
+        <a href="panaderia.html" class="category-card">
+          <h3>Panadería</h3>
+          <p>Pan fresco, bollería y productos de horno.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container section-header">
+        <span class="eyebrow">Productos destacados</span>
+        <h2>Descubre nuestras recomendaciones</h2>
+        <p>Productos cargados dinámicamente desde JSON para mostrar un catálogo real y actualizado.</p>
+      </div>
+      <div class="carousel-wrapper">
+        <button class="carousel-control carousel-prev" id="carouselPrev" aria-label="Producto anterior">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left"
+            viewBox="0 0 16 16">
+            <path
+              d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753" />
+          </svg>
+        </button>
+        <div class="carousel-container">
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+        <button class="carousel-control carousel-next" id="carouselNext" aria-label="Producto siguiente">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right"
+            viewBox="0 0 16 16" style="transform: scaleX(-1);">
+            <path
+              d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753" />
+          </svg>
+        </button>
+      </div>
+      <div class="carousel-indicators" id="carouselIndicators"></div>
+    </section>
+
+    <section class="about-cta">
+      <div class="container about-cta-card">
+        <div>
+          <h2>Cash Borosa, tu tienda de confianza en Almería</h2>
+          <p>Una experiencia digital clara, con colores corporativos y atención a todos los detalles para presentar en
+            una entrevista profesional.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Contáctanos</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYear"></span> Cash Borosa. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="https://www.instagram.com/borosa_market/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/borosa.market" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/company/borosa-market/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.tiktok.com/@borosamarket/" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="toast" id="toastNotif" aria-live="polite"></div>
+
+  <div class="cart-modal" id="cartModal" aria-hidden="true">
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Tu carrito</h2>
+        <button class="close-button" id="closeCartBtn" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div class="cart-body">
+        <div id="cartItems"></div>
+        <div class="cart-summary">
+          <div>
+            <span>Total</span>
+            <strong id="cartTotal">0,00 €</strong>
+          </div>
+          <button class="btn btn-secondary" id="clearCartBtn">Vaciar carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-actions">
+    <button class="side-action" id="openCartSidebarBtn" aria-label="Abrir carrito">🛒</button>
+    <button class="side-action scroll-top-button" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Cash Borosa</title>
+  <meta name="description" content="Página de contacto de Cash Borosa con información de la tienda y mapa.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Cash <span>Borosa</span></a>
+      <nav class="site-nav">
+        <a href="index.html">Inicio</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-secondary cart-button" id="openCartBtn" aria-label="Abrir carrito">Carrito (<span id="cartCount">0</span>)</button>
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="contact.html">Contacto</a>
+    <a href="contact.html">Prueba 1</a>
+    <a href="contact.html">Prueba 2</a>
+  </nav>
+
+  <main>
+    <section class="contact-hero">
+      <div class="container contact-hero-grid">
+        <div>
+          <span class="eyebrow">Contacto</span>
+          <h1>Hablemos de tu próxima compra en Cash Borosa.</h1>
+          <p>Encuentra la información de nuestra tienda, visita nuestro local en Almería y envíanos un mensaje con tus dudas o pedidos.</p>
+        </div>
+        <div class="contact-card">
+          <h2>Información de contacto</h2>
+          <p><strong>Dirección:</strong> Cash Borosa, Almería</p>
+          <p><strong>Teléfono:</strong> +34 950 000 000</p>
+          <p><strong>Email:</strong> info@borosamarket.es</p>
+          <a href="mailto:info@borosamarket.es" class="btn btn-primary">Enviar email</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container section-header">
+        <span class="eyebrow">Sobre nosotros</span>
+        <h2>Cash Borosa es tu supermercado local digital</h2>
+        <p>Combinamos un catálogo amplio, precios competitivos y una experiencia online sencilla para que compres desde cualquier dispositivo.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Somos una tienda comprometida con ofrecer los mejores productos frescos y de despensa en Almería. Nuestra prioridad es que encuentres todo lo que necesitas con facilidad y seguridad.</p>
+          <ul>
+            <li>Entrega rápida</li>
+            <li>Atención cercana</li>
+            <li>Productos seleccionados</li>
+          </ul>
+        </div>
+        <div class="map-card">
+          <iframe
+            title="Mapa Cash Borosa Almería"
+            src="https://www.google.com/maps?q=Borosa%20Market%20Almer%C3%ADa&output=embed"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="container section-header">
+        <span class="eyebrow">Formulario</span>
+        <h2>Escríbenos un mensaje</h2>
+        <p>Estamos disponibles para ayudarte con pedidos, consultas o información sobre nuestros productos.</p>
+      </div>
+      <div class="container contact-grid">
+        <form class="contact-form" id="contactForm">
+          <label>
+            Nombre
+            <input type="text" name="name" placeholder="Tu nombre" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="tu@correo.com" required>
+          </label>
+          <label>
+            Mensaje
+            <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        </form>
+        <div class="contact-info-card">
+          <h3>Más formas de contactarnos</h3>
+          <p>También puedes visitarnos en la tienda o enviarnos un mensaje por WhatsApp.</p>
+          <div class="contact-info-list">
+            <div>
+              <span>Dirección</span>
+              <p>C/ Ejemplo 12, Almería, España</p>
+            </div>
+            <div>
+              <span>Whatsapp</span>
+              <p>+34 600 000 000</p>
+            </div>
+            <div>
+              <span>Horario</span>
+              <p>Lun - Vie 9:00 - 21:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYearContact"></span> Cash Borosa. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="https://www.instagram.com/borosa_market/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/borosa.market" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/company/borosa-market/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.tiktok.com/@borosamarket/" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="toast" id="toastNotif" aria-live="polite"></div>
+
+  <div class="cart-modal" id="cartModal" aria-hidden="true">
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Tu carrito</h2>
+        <button class="close-button" id="closeCartBtn" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div class="cart-body">
+        <div id="cartItems"></div>
+        <div class="cart-summary">
+          <div>
+            <span>Total</span>
+            <strong id="cartTotal">0,00 €</strong>
+          </div>
+          <button class="btn btn-secondary" id="clearCartBtn">Vaciar carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-actions">
+    <button class="side-action" id="openCartSidebarBtn" aria-label="Abrir carrito">🛒</button>
+    <button class="side-action scroll-top-button" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

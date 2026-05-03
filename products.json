@@ -1,0 +1,23 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Pack Día de la madre",
+    "description": "Manzana, plátano y lechuga para tu compra diaria.",
+    "price": 130,
+    "image": "assets/img/product1.svg"
+  },
+  {
+    "id": 2,
+    "name": "Cesta Bebida Premium",
+    "description": "Selección de refrescos y zumos con descuento especial.",
+    "price": 9.90,
+    "image": "assets/img/product2.svg"
+  },
+  {
+    "id": 3,
+    "name": "Combo Ahorro Cocina",
+    "description": "Aceite, arroz y conservas para tus recetas rápidas.",
+    "price": 18.75,
+    "image": "assets/img/product3.svg"
+  }
+]

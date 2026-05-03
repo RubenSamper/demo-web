@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto | Cash Borosa</title>
+  <meta name="description" content="Página de detalle del producto en Cash Borosa.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Cash <span>Borosa</span></a>
+      <nav class="site-nav">
+        <a href="index.html">Inicio</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-secondary cart-button" id="openCartBtn" aria-label="Abrir carrito">Carrito (<span id="cartCount">0</span>)</button>
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="contact.html">Contacto</a>
+    <a href="contact.html">Prueba 1</a>
+    <a href="contact.html">Prueba 2</a>
+  </nav>
+
+  <main>
+    <section class="product-detail-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Detalle</span>
+          <h2 id="productDetailName">Cargando producto...</h2>
+        </div>
+        <div class="product-detail-grid">
+          <div class="product-detail-image">
+            <img id="productDetailImage" src="assets/img/product1.svg" alt="Producto">
+          </div>
+          <div class="product-detail-info">
+            <p id="productDetailDescription">Selecciona un producto para ver sus detalles completos.</p>
+            <p class="product-detail-price" id="productDetailPrice">0,00 €</p>
+            <div class="product-actions">
+              <button id="addToCartDetailBtn" class="btn btn-primary">Añadir al carrito</button>
+              <a href="index.html" class="btn btn-secondary">Volver al catálogo</a>
+            </div>
+            <div class="product-detail-extra">
+              <h3>Información adicional</h3>
+              <p id="productDetailExtra">Los productos que compras en Cash Borosa están seleccionados para ofrecerte calidad y buen precio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYear"></span> Cash Borosa. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="https://www.instagram.com/borosa_market/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/borosa.market" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/company/borosa-market/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.tiktok.com/@borosamarket/" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="toast" id="toastNotif" aria-live="polite"></div>
+
+  <div class="cart-modal" id="cartModal" aria-hidden="true">
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Tu carrito</h2>
+        <button class="close-button" id="closeCartBtn" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div class="cart-body">
+        <div id="cartItems"></div>
+        <div class="cart-summary">
+          <div>
+            <span>Total</span>
+            <strong id="cartTotal">0,00 €</strong>
+          </div>
+          <button class="btn btn-secondary" id="clearCartBtn">Vaciar carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-actions">
+    <button class="side-action" id="openCartSidebarBtn" aria-label="Abrir carrito">🛒</button>
+    <button class="side-action scroll-top-button" id="scrollTopBtn" aria-label="Ir arriba">↑</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
